@@ -3,13 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GREEN</title>
+    <link rel="icon" href="Green.jpg" type="image/png">
     <style>
         body {
-            background: #00FF00;
+            background-color: #3efb01;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            flex-direction: column;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #4CAF50;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+        }
+
+        .navbar-left, .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a, .navbar button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: bold; /* Bolder text */
+        }
+
+        .navbar a img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* This will make the logo fill the button without being distorted */
+        }
+
+        .navbar a:hover, .navbar button:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 60px; /* To avoid the content getting hidden behind the navbar */
+        }
+
+        .tokenomics {
+            background-color: #fff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .box {
+            display: none;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+
+<div class="navbar">
+    <!-- Left Side: CA and DEX buttons -->
+    <div class="navbar-left">
+        <button onclick="toggleBox('contractBox')">CA</button>
+        <a href="https://dexscreener.com/solana/fty57vtpqnjktlle2vwhs1n6p9mul9ako8p1zumateph" target="_blank">DEX</a>
+    </div>
+    
+    <!-- Right Side: Twitter and Telegram logos -->
+    <div class="navbar-right">
+        <a href="https://x.com/green133638/" target="_blank">
+            <img src="/twitter.jpeg" alt="Twitter Logo">
+        </a>
+        <a href="https://t.me/greensolana1" target="_blank">
+            <img src="/telegram.jpeg" alt="Telegram Logo">
+        </a>
+    </div>
+</div>
+
+<div class="container">
+    <div id="contractBox" class="box">
+        <p>Contract Address (CA): fty57vtpqnjktlle2vwhs1n6p9mul9ako8p1zumateph</p>
+    </div>
+
+    <div class="tokenomics">
+        <h2>Tokenomics</h2>
+        <p><strong>Supply:</strong> 900,000,000</p>
+        <p><strong>Liquidity:</strong> Burned</p>
+        <p><strong>Freeze & Mint Authority:</strong> Revoked</p>
+    </div>
+</div>
+
+<script>
+    function toggleBox(boxId) {
+        const box = document.getElementById(boxId);
+        if (box.style.display === "none" || box.style.display === "") {
+            box.style.display = "block";
+        } else {
+            box.style.display = "none";
+        }
+    }
+</script>
+
 </body>
 </html>
